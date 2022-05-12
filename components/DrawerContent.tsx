@@ -9,10 +9,7 @@ import {
     RouteType,
 } from "utils/nav-routes";
 
-interface Props {
-}
-
-export default function DrawerContent (props: Props) {
+export default function DrawerContent () {
 
     const specRoutes = NAV_ROUTES.filter((routeContext) => routeContext.type === RouteType.SPECS)[0].routes;
     const docRoutes = NAV_ROUTES.filter((routeContext) => routeContext.type === RouteType.DOCS)[0].routes;

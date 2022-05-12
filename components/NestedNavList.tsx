@@ -7,12 +7,15 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Link from 'next/link';
-import { ReactNode, useState } from "react";
+import {
+    ReactNode,
+    useState,
+} from "react";
 import { RouteParams } from 'utils/nav-routes';
 
 export interface Props {
     categoryText: string;
-    categoryIcon?: ReactNode,
+    categoryIcon?: ReactNode;
     routeIcon?: ReactNode;
     routeParams: RouteParams[];
 }
@@ -47,27 +50,27 @@ export default function NestedNavList (props: Props) {
                 in={open}
                 timeout="auto"
             >
-            <List color="primary">
-                {routeParams.map((route) => (
-                    <Link
-                        key={route.id}
-                        passHref
-                        href={route.path}
-                    >
-                        <ListItem
-                            button
-                            component="a"
+                <List color="primary">
+                    {routeParams.map((route) => (
+                        <Link
+                            key={route.id}
+                            passHref
+                            href={route.path}
                         >
-                            {routeIcon &&
+                            <ListItem
+                                button
+                                component="a"
+                            >
+                                {routeIcon &&
                                 <ListItemIcon>
                                     {routeIcon}
                                 </ListItemIcon>
-                            }
-                            <ListItemText primary={route.displayName} />
-                        </ListItem>
-                    </Link>
-                ))}
-            </List>
+                                }
+                                <ListItemText primary={route.displayName} />
+                            </ListItem>
+                        </Link>
+                    ))}
+                </List>
             </Collapse>
         </List>
     );
