@@ -11,7 +11,7 @@ const Doc = defineDocumentType(() => ({
         title: {
             type: `string`,
             description: `The title of the doc`,
-            required: false,
+            required: true,
         },
         date: {
             type: `date`,

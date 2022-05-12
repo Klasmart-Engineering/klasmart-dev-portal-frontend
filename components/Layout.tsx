@@ -1,23 +1,19 @@
+import DrawerContent from './DrawerContent';
 import MenuIcon from '@mui/icons-material/Menu';
-import MenuBookOutlinedIcon from '@mui/icons-material/MenuBookOutlined';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {
+    createTheme,
+    ThemeProvider,
+} from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { allDocs, Doc } from 'contentlayer/generated';
-import Link from 'next/link';
 import { useState } from 'react';
 
-const drawerWidth = 240;
+const drawerWidth = 300;
 
 interface Props {
     children: any;
@@ -25,56 +21,38 @@ interface Props {
 
 const darkTheme = createTheme({
     palette: {
-        mode: 'dark',
+        mode: `dark`,
         primary: {
-            main: '#1976d2',
+            main: `#1976d2`,
         },
     },
 });
 
-export default function Layout(props: Props) {
+export default function Layout (props: Props) {
     const { children } = props;
-    const [mobileOpen, setMobileOpen] = useState(false);
+    const [ mobileOpen, setMobileOpen ] = useState(false);
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
 
-    const drawer = (
-        <div>
-            <Toolbar color="primary" />
-            <Divider color="primary" />
-            <List color="primary">
-                {allDocs.map((doc: Doc) => (
-                    <Link
-                        key={doc._id}
-                        href={`/docs/${doc._raw.flattenedPath}`}
-                        passHref
-                    >
-                        <ListItem button component="a">
-                            <ListItemIcon>
-                                <MenuBookOutlinedIcon
-                                    style={{
-                                        color: '#e2e8f0',
-                                    }}
-                                ></MenuBookOutlinedIcon>
-                            </ListItemIcon>
-                            <ListItemText primary={doc.title} />
-                        </ListItem>
-                    </Link>
-                ))}
-            </List>
-        </div>
-    );
+    const drawer = <DrawerContent />;
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{
+            display: `flex`,
+        }}
+        >
             <CssBaseline />
             <AppBar
                 position="fixed"
                 sx={{
-                    width: { sm: `calc(100% - ${drawerWidth}px)` },
-                    ml: { sm: `${drawerWidth}px` },
+                    width: {
+                        sm: `calc(100% - ${drawerWidth}px)`,
+                    },
+                    ml: {
+                        sm: `${drawerWidth}px`,
+                    },
                 }}
             >
                 <Toolbar>
@@ -82,19 +60,35 @@ export default function Layout(props: Props) {
                         color="inherit"
                         aria-label="open drawer"
                         edge="start"
+                        sx={{
+                            mr: 2,
+                            display: {
+                                sm: `none`,
+                            },
+                        }}
                         onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { sm: 'none' } }}
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div">
+                    <Typography
+                        noWrap
+                        variant="h6"
+                        component="div"
+                    >
                         Responsive drawer
                     </Typography>
                 </Toolbar>
             </AppBar>
             <Box
                 component="nav"
-                sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+                sx={{
+                    width: {
+                        sm: drawerWidth,
+                    },
+                    flexShrink: {
+                        sm: 0,
+                    },
+                }}
                 aria-label="mailbox folders"
             >
                 {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
@@ -102,30 +96,38 @@ export default function Layout(props: Props) {
                     <Drawer
                         variant="temporary"
                         open={mobileOpen}
-                        onClose={handleDrawerToggle}
                         ModalProps={{
                             keepMounted: true, // Better open performance on mobile.
                         }}
                         sx={{
-                            display: { xs: 'block', sm: 'none' },
+                            display: {
+                                xs: `block`,
+                                sm: `none`,
+                            },
+                            // eslint-disable-next-line @typescript-eslint/naming-convention
                             '& .MuiDrawer-paper': {
-                                boxSizing: 'border-box',
+                                boxSizing: `border-box`,
                                 width: drawerWidth,
                             },
                         }}
+                        onClose={handleDrawerToggle}
                     >
                         {drawer}
                     </Drawer>
                     <Drawer
+                        open
                         variant="permanent"
                         sx={{
-                            display: { xs: 'none', sm: 'block' },
+                            display: {
+                                xs: `none`,
+                                sm: `block`,
+                            },
+                            // eslint-disable-next-line @typescript-eslint/naming-convention
                             '& .MuiDrawer-paper': {
-                                boxSizing: 'border-box',
+                                boxSizing: `border-box`,
                                 width: drawerWidth,
                             },
                         }}
-                        open
                     >
                         {drawer}
                     </Drawer>
@@ -136,7 +138,9 @@ export default function Layout(props: Props) {
                 sx={{
                     flexGrow: 1,
                     p: 3,
-                    width: { sm: `calc(100% - ${drawerWidth}px)` },
+                    width: {
+                        sm: `calc(100% - ${drawerWidth}px)`,
+                    },
                 }}
             >
                 <Toolbar />

@@ -12,7 +12,7 @@ export default function Landing () {
     const router = useRouter();
 
     const handleClick = () => {
-        router.push(`/docs/test-document`, undefined, {
+        router.push(`/specs/swagger`, undefined, {
             shallow: true,
         });
     };
