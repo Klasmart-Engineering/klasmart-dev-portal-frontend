@@ -1,7 +1,10 @@
 {
   "ignoreTestFiles": "*.js",
   "testFiles": "**/*.feature",
-  "baseUrl": "https://www.google.com",
+  "baseUrl": "https://www.google.co.uk",
+  "env": {
+    "staging": "https://www.google.com"
+  },
   "defaultCommandTimeout": 30000,
   "responseTimeout": 60000,
   "requestTimeout": 60000,
