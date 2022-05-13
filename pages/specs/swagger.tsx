@@ -3,8 +3,7 @@ import Layout from 'components/Layout';
 import dynamic from 'next/dynamic';
 import { ReactElement } from 'react';
 
-// eslint-disable-next-line @typescript-eslint/quotes
-const SwaggerUI = dynamic(import('swagger-ui-react'), {
+const SwaggerUI = dynamic(() => import(`swagger-ui-react`), {
     ssr: false,
 });
 
