@@ -12,6 +12,7 @@ import { ReactElement } from 'react';
 // eslint-disable-next-line require-await
 export async function getStaticPaths () {
     const paths: string[] = allDocs.map((doc) => doc.url);
+
     return {
         paths,
         fallback: false,
@@ -19,13 +20,18 @@ export async function getStaticPaths () {
 }
 
 interface IParams extends ParsedUrlQuery {
-    slug: string;
+    slug: string[];
 }
 
 // eslint-disable-next-line require-await
 export async function getStaticProps (context: { params: IParams }) {
     const { slug } = context.params;
-    const doc: Doc | undefined = allDocs.find((doc) => doc._raw.flattenedPath === slug);
+    const doc: Doc | undefined = allDocs.find((doc) => {
+        const locale = slug[0];
+        const docName = slug[1];
+
+        return doc.url === `/docs/${locale}/${docName}`;
+    });
 
     return {
         props: {
@@ -36,6 +42,7 @@ export async function getStaticProps (context: { params: IParams }) {
 
 export default function DocLayout ({ doc }: { doc: Doc }) {
     const MdxBody = useMDXComponent(doc.body.code);
+
     return (
         <>
             <article>

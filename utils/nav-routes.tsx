@@ -32,7 +32,7 @@ export const NAV_ROUTES: RouteContext[] = [
         routes: allDocs.map((doc: Doc) => {
                     return {
                         id: doc._id,
-                        path: `/docs/${doc._raw.flattenedPath}`,
+                        path: doc.url,
                         displayName: doc.title
                     }
             })
