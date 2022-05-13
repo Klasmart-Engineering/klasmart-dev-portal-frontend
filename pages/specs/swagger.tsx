@@ -3,12 +3,12 @@ import Layout from 'components/Layout';
 import dynamic from 'next/dynamic';
 import { ReactElement } from 'react';
 
-const SwaggerUI = dynamic(import(`swagger-ui-react`), {
+// eslint-disable-next-line @typescript-eslint/quotes
+const SwaggerUI = dynamic(import('swagger-ui-react'), {
     ssr: false,
 });
 
 export default function ApiSwagger () {
-
     return (
         <SwaggerUI url="https://swagger-ui.kidsloop.net/config/api.swagger.json" />
     );
