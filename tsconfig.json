@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
       "target": "es5",
-      "lib": ["dom", "dom.iterable", "esnext"],
+      "lib": ["es5","dom", "dom.iterable", "esnext"],
       "allowJs": true,
       "skipLibCheck": true,
       "strict": true,
@@ -14,7 +14,8 @@
       "isolatedModules": true,
       "jsx": "preserve",
       "incremental": true,
-      "baseUrl": ".",
+      "types": ["cypress", "@testing-library/cypress"],
+      "baseUrl": "../node_nodules",
       "paths": {
           "contentlayer/generated": ["./.contentlayer/generated"]
       }
@@ -24,6 +25,6 @@
       "**/*.ts",
       "**/*.tsx",
       ".contentlayer/generated"
-  ],
+, "cypress/plugins/index.ts", "cypress/support/utility.js", "cypress/support/index.js"  ],
   "exclude": ["node_modules"]
 }

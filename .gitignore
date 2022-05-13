@@ -37,3 +37,10 @@ yarn-error.log*
 
 # Contentlayer
 .contentlayer
+
+# cypress
+cypress/videos
+cypress/screenshots
+test-reports/
+cypress/cucumber-json/
+xunit.xml
