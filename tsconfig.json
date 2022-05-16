@@ -15,7 +15,7 @@
       "jsx": "preserve",
       "incremental": true,
       "types": ["cypress", "@testing-library/cypress"],
-      "baseUrl": "../node_nodules",
+      "baseUrl": ".",
       "paths": {
           "contentlayer/generated": ["./.contentlayer/generated"]
       }

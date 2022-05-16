@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "test:smoke": "./node_modules/.bin/cypress-tags run -e TAGS=\"@smoke\""
   },
   "cypress-cucumber-preprocessor": {
@@ -52,6 +53,7 @@
     "@types/node": "17.0.32",
     "@types/react": "18.0.9",
     "@types/react-dom": "18.0.3",
+    "@types/swagger-ui-react": "^4.11.0",
     "browserify": "^17.0.0",
     "cucumber": "^7.0.0-rc.0",
     "cucumber-html-reporter": "^5.5.0",
