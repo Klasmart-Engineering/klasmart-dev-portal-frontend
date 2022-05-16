@@ -1,4 +1,6 @@
-//utility.ts
+// utility.ts
+// add utility methods to be used in page object files
+
 export class Utility {
     getBaseUrl() {
         let envi = Cypress.env("ENV"); //Get the value of environment variable i.e ENV

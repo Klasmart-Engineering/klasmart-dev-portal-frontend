@@ -4,7 +4,7 @@ import { utils } from "../../support/utility"
 class HomePage {
     /*---------------  Start Web Element  ---------------*/
 
-    searchBar = "[title='Search']";
+    searchBar = `[title='Search']`;
     
 
 
@@ -27,7 +27,7 @@ class HomePage {
     // example using testing-library commands
     clearCookies() 
     {
-        cy.findByRole('button', {name: /I agree/i}).click();
+        cy.findByRole(`button`, {name: /I agree/i}).click();
     }
 }
 
