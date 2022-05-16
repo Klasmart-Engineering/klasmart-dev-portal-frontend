@@ -6,6 +6,10 @@ const nextConfig = {
     images: {
         domains: ["kidsloop.net"],
     },
+    i18n: {
+        locales: ['en-US', 'fr'],
+        defaultLocale: 'en-US',
+    },    
 };
 
 module.exports = withContentlayer(nextConfig);

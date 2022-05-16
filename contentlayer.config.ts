@@ -11,7 +11,7 @@ const Doc = defineDocumentType(() => ({
         title: {
             type: `string`,
             description: `The title of the doc`,
-            required: false,
+            required: true,
         },
         date: {
             type: `date`,
@@ -22,7 +22,16 @@ const Doc = defineDocumentType(() => ({
     computedFields: {
         url: {
             type: `string`,
-            resolve: (doc) => `/docs/${doc._raw.flattenedPath}`,
+            resolve: (doc) => `/docs/${doc._raw.flattenedPath}`
+            ,
+        },
+        locale: {
+            type: `string`,
+            resolve: (doc) => {
+                const pathFragments = doc._raw.flattenedPath.split(`/`);
+                const locale = pathFragments[0];
+                return locale;
+            },
         },
     },
 }));
