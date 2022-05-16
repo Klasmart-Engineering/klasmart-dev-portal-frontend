@@ -13,21 +13,21 @@ class HomePage {
     /*----------------  End Web Element  ----------------*/
 
     // example using utils file
-    goToHomePage() 
+    goToHomePage ()
     {
         cy.visit(utils.getBaseUrl());
     }
 
     // example using default cypress commands
-    enterSearchQuery(query: string) 
+    enterSearchQuery (query: string)
     {
-        cy.get(this.searchBar).should("be.visible").type(query).type("{enter}");
+        cy.get(this.searchBar).should(`be.visible`).type(query).type(`{enter}`);
     }
 
     // example using testing-library commands
-    clearCookies() 
+    clearCookies ()
     {
-        cy.findByRole(`button`, {name: /I agree/i}).click();
+        cy.findByRole(`button`, { name: /I agree/i }).click();
     }
 }
 
