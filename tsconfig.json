@@ -24,7 +24,9 @@
       "next-env.d.ts",
       "**/*.ts",
       "**/*.tsx",
-      ".contentlayer/generated"
-, "cypress/plugins/index.ts", "cypress/support/utility.js", "cypress/support/index.js"  ],
+      ".contentlayer/generated", 
+      "cypress/plugins/index.ts", 
+      "cypress/support/utility.js", 
+      "cypress/support/index.js"  ],
   "exclude": ["node_modules"]
 }
