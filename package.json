@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "test:smoke": "./node_modules/.bin/cypress-tags run -e TAGS=\"@smoke\""
+    "test:smoke": "./node_modules/.bin/cypress-tags run -e TAGS=\"@smoke\"",
+    "e2e:reports": "node cucumber-html-report.js"
   },
   "cypress-cucumber-preprocessor": {
     "cucumberJson": {
