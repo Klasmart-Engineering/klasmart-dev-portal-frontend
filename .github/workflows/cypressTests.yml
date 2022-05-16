@@ -21,7 +21,6 @@ jobs:
         id: cypresstest
         run: |
           npm config set color false
-
           OUTPUT1=`npm run test:smoke| tail -50 | sed -r "s/\x1B\[([0-9]{1,3}(;[0-9]{1,2})?)?[mGK]//g"`
           echo "$OUTPUT1"
           echo "OUTPUT<<EOF" >> $GITHUB_ENV

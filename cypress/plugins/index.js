@@ -22,16 +22,5 @@ module.exports = (on, config) => {
   };
   on('file:preprocessor', cucumber(options));
 
-  on('task', {
-    setUserDetails: (obj) => { return userDetails = obj;},
-    getUserDetails: () => { return userDetails; },
-    setSchoolDetails: (obj) => { return schoolDetails = obj; },
-    getSchoolDetails: () => { return schoolDetails; },
-    setName: (val) => { return entityDescription = val; },
-    getName: () => { return entityDescription; },
-    setAT: (obj) => { return termDetails = obj; },
-    getAT: () => { return termDetails; }
-  })
-
   return config;
 };
