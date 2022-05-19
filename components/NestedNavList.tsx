@@ -7,6 +7,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import {
     ReactNode,
     useState,
@@ -21,6 +22,7 @@ export interface Props {
 }
 
 export default function NestedNavList (props: Props) {
+    const { locale } = useRouter();
     const {
         categoryText,
         categoryIcon,
@@ -51,25 +53,27 @@ export default function NestedNavList (props: Props) {
                 timeout="auto"
             >
                 <List color="primary">
-                    {routeParams.map((route) => (
-                        <Link
-                            key={route.id}
-                            passHref
-                            href={route.path}
-                        >
-                            <ListItem
-                                button
-                                component="a"
+                    {routeParams.filter(({ locale: routeLocale }) => routeLocale === locale)
+                        .map((route) => (
+                            <Link
+                                key={route.id}
+                                passHref
+                                href={route.path}
+                                locale={route.locale}
                             >
-                                {routeIcon &&
+                                <ListItem
+                                    button
+                                    component="a"
+                                >
+                                    {routeIcon &&
                                 <ListItemIcon>
                                     {routeIcon}
                                 </ListItemIcon>
-                                }
-                                <ListItemText primary={route.displayName} />
-                            </ListItem>
-                        </Link>
-                    ))}
+                                    }
+                                    <ListItemText primary={route.displayName} />
+                                </ListItem>
+                            </Link>
+                        ))}
                 </List>
             </Collapse>
         </List>
