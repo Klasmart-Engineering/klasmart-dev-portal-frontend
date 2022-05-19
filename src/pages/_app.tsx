@@ -1,4 +1,3 @@
-import '../styles/github-markdown.css';
 import '../styles/globals.css';
 import { ThemeProvider } from '@mui/material/styles';
 import type { NextPage } from 'next';
@@ -8,7 +7,7 @@ import type {
     ReactElement,
     ReactNode,
 } from 'react';
-import { useTheme } from 'utils/theme';
+import { useTheme } from 'src/utils/theme';
 
 type NextPageWithLayout = NextPage & {
     getLayout?: (page: ReactElement) => ReactNode;
