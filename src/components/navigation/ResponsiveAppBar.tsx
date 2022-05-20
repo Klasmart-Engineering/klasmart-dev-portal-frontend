@@ -40,7 +40,7 @@ export default function ResponsiveAppBar (props: Props) {
 
     return (
         <AppBar
-            position="static"
+            position="absolute"
             color="transparent"
             elevation={0}
         >
