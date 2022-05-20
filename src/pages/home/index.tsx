@@ -1,23 +1,24 @@
 import example from "../../assets/example.png";
 import partners from "../../assets/partners.png";
 import Background from "../../components/Background";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 import Image from "next/image";
 
 export default function Home () {
     const style = {
         container: {
-            display: `flex`,
             marginTop: `50px`,
             marginLeft: `auto`,
             marginRight: `auto`,
             width: `80%`,
-            flexDirection: `column` as `column`,
             justifyContent: `space-between`,
         },
         heroContainer: {
             alignSelf: `center`,
             alignItems: `center`,
             display: `flex`,
+            // flexWrap: `wrap` as `wrap`,
             justifyContent: `center`,
         },
         heroText: {
@@ -27,9 +28,6 @@ export default function Home () {
         heroImages: {
             width: `50%`,
             flexGrow: 1,
-        },
-        heroHeader: {
-            fontSize: `4em`,
         },
         partnerImages: {
             marginTop: `50px`,
@@ -48,51 +46,62 @@ export default function Home () {
     };
     return (
         <Background>
-            <div style={style.container}>
-                <div style={style.heroContainer}>
-                    <div style={style.heroText}>
-                        <h1 style={style.heroHeader}>Education infrastructure for the internet</h1>
-                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </div>
+            <Box
+                sx={{
+                    display: `grid`,
+                    gridTemplateRows: `repeat(5, 1fr)`,
+                }}
+                style={style.container}
+            >
+                <Box
+                    sx={{
+                        display: `grid`,
+                        gridTemplateColumns: `repeat(2, 1fr)`,
+                    }}
+                    style={style.heroContainer}
+                >
+                    <div>
+                        <Typography variant={`h2`}>Education infrastructure for the internet</Typography>
+                        <Typography>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </Typography>
                     </div>
                     <Image
-                        style={style.heroImages}
                         src={example}
                         width={1600}
                         height={1000}
                     />
-                </div>
-                <div style={style.partnerImages}>
+                </Box>
+                <div>
                     <Image
                         src={partners}
                         width={802}
                         height={90}
                     />
                 </div>
-                <div style={style.sideKick}>
-                    <h1>
+                <div>
+                    <Typography variant={`h3`}>
                     A fully integrated suite of education products
-                    </h1>
-                    <div>
+                    </Typography>
+                    <Typography>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
+                    </Typography>
                 </div>
-                <div style={style.sideKick}>
-                    <h1>
+                <div>
+                    <Typography variant={`h3`}>
                     A fully integrated suite of education products
-                    </h1>
-                    <div>
+                    </Typography>
+                    <Typography>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
+                    </Typography>
                 </div>
-                <div style={style.sideKick}>
-                    <h1>
+                <div>
+                    <Typography variant={`h3`}>
                     A fully integrated suite of education products
-                    </h1>
-                    <div>
+                    </Typography>
+                    <Typography>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </div>
+                    </Typography>
                 </div>
-            </div>
+            </Box>
         </Background>
     );
 }
