@@ -22,6 +22,11 @@ export function useTheme () {
 
     const theme = createTheme({
         palette,
+        typography: {
+            button: {
+                textTransform: `none`,
+            },
+        },
     });
 
     return responsiveFontSizes(theme);

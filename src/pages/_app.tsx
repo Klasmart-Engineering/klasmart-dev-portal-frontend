@@ -7,6 +7,7 @@ import type {
     ReactElement,
     ReactNode,
 } from 'react';
+import ResponsiveAppBar from 'src/components/navigation/ResponsiveAppBar';
 import { useTheme } from 'src/utils/theme';
 
 type NextPageWithLayout = NextPage & {
@@ -25,6 +26,7 @@ export default function MyApp ({ Component, pageProps }: AppPropsWithLayout) {
     return getLayout((
         <NextIntlProvider messages={pageProps.messages}>
             <ThemeProvider theme={useTheme()}>
+                <ResponsiveAppBar mode="dark" />
                 <Component {...pageProps} />
             </ThemeProvider>
         </NextIntlProvider>
