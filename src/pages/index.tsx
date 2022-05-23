@@ -27,12 +27,7 @@ export default function Landing () {
                     href="/favicon.ico"
                 />
             </Head>
-            <Box
-                component="header"
-                padding={2}
-                position="absolute"
-                width="100%"
-            >
+            <Box m={2}>
                 <p>Imagine this page as the sign in page - this page might not even exist</p>
                 <Button
                     variant="contained"
