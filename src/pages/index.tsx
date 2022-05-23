@@ -12,18 +12,8 @@ import { ReactElement } from "react";
 export default function Landing () {
     return (
         <Background>
-            <Container
-                sx={{
-                    display: `grid`,
-                    gridTemplateRows: `repeat(5, 1fr)`,
-                }}
-            >
-                <HeroContainer
-                    sx={{
-                        display: `grid`,
-                        gridTemplateColumns: `repeat(2, 1fr)`,
-                    }}
-                >
+            <Container>
+                <HeroContainer>
                     <div>
                         <Typography variant={`h2`}>Education infrastructure for the internet</Typography>
                         <Typography>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </Typography>
@@ -40,30 +30,6 @@ export default function Landing () {
                         width={802}
                         height={90}
                     />
-                </div>
-                <div>
-                    <Typography variant={`h3`}>
-                A fully integrated suite of education products
-                    </Typography>
-                    <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </Typography>
-                </div>
-                <div>
-                    <Typography variant={`h3`}>
-                A fully integrated suite of education products
-                    </Typography>
-                    <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </Typography>
-                </div>
-                <div>
-                    <Typography variant={`h3`}>
-                A fully integrated suite of education products
-                    </Typography>
-                    <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </Typography>
                 </div>
             </Container>
         </Background>

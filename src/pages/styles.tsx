@@ -1,14 +1,15 @@
-import Box from "@mui/material/Box";
-import styled from "styled-components";
+import { styled } from "@mui/material/styles";
 
-export const Container = styled(Box)`
+export const Container = styled(`div`)`
+    display: flex;
+    flex-direction: column;
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     width: 80%;
 `;
 
-export const HeroContainer = styled(Box)`
+export const HeroContainer = styled(`div`)`
     align-self: center;
     align-items: center;
     display: flex;
