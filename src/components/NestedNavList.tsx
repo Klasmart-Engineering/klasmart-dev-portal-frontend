@@ -11,13 +11,16 @@ import {
     ReactNode,
     useState,
 } from "react";
-import { RouteParams } from 'utils/nav-routes';
 
 export interface Props {
     categoryText: string;
     categoryIcon?: ReactNode;
     routeIcon?: ReactNode;
-    routeParams: RouteParams[];
+    routeParams: {
+        id: string;
+        path: string;
+        displayName: string;
+    }[];
 }
 
 export default function NestedNavList (props: Props) {

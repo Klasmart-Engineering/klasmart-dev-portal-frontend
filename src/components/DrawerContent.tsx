@@ -1,18 +1,10 @@
 import NestedNavList from "./NestedNavList";
-import ArticleOutlinedIcon from '@mui/icons-material/ArticleOutlined';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import { Toolbar } from "@mui/material";
 import Image from 'next/image';
 import Link from "next/link";
-import {
-    NAV_ROUTES,
-    RouteType,
-} from "utils/nav-routes";
 
 export default function DrawerContent () {
-
-    const specRoutes = NAV_ROUTES.filter((routeContext) => routeContext.type === RouteType.SPECS)[0].routes;
-    const docRoutes = NAV_ROUTES.filter((routeContext) => routeContext.type === RouteType.DOCS)[0].routes;
 
     return (
         <div>
@@ -35,14 +27,20 @@ export default function DrawerContent () {
                 </Link>
             </Toolbar>
             <NestedNavList
-                categoryText="Specifications"
+                categoryText="Subscriptions"
                 routeIcon={<DescriptionOutlinedIcon />}
-                routeParams={specRoutes}
-            />
-            <NestedNavList
-                categoryText="Docs"
-                routeIcon={<ArticleOutlinedIcon />}
-                routeParams={docRoutes}
+                routeParams={[
+                    {
+                        id: `subscriptions-root`,
+                        path: `/subscriptions`,
+                        displayName: `Root`,
+                    },
+                    {
+                        id: `subscriptions-more`,
+                        path: `/subscriptions/more`,
+                        displayName: `More`,
+                    },
+                ]}
             />
         </div>
     );
