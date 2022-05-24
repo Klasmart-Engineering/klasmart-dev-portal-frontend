@@ -15,6 +15,7 @@ jobs:
             NODE_AUTH_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
     build:
       needs: [install]
+      runs-on: ubuntu-latest
       steps:
         - name: Build project
           run: npm run build
