@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@emotion/react": "^11.9.0",
@@ -19,6 +20,8 @@
     "react-dom": "18.1.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
     "@kl-engineering/eslint-config": "^2.1.0",
     "@next/eslint-plugin-next": "^12.1.6",
     "@rushstack/eslint-patch": "^1.1.3",
@@ -28,6 +31,7 @@
     "@types/react-dom": "18.0.3",
     "eslint": "8.15.0",
     "eslint-config-next": "12.1.6",
+    "husky": "^8.0.0",
     "typescript": "4.6.4"
   }
 }
