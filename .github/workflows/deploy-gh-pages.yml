@@ -17,12 +17,4 @@ jobs:
       needs: [install]
       runs-on: ubuntu-latest
       steps:
-        - name: Build project
-          run: npm run build
-        - name: Export static files
-          run: npm run export
-        - name: Deploy
-          uses: JamesIves/github-pages-deploy-action@v4.3.3
-          with:
-            branch: main
-            folder: out
+        - uses: ./.github/actions/npm-build
