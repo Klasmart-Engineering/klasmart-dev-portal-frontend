@@ -1,10 +1,15 @@
 import NestedNavList from "./NestedNavList";
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import { Toolbar } from "@mui/material";
-import Image from 'next/image';
+import Image,
+{ ImageLoaderProps } from 'next/image';
 import Link from "next/link";
 
 export default function DrawerContent () {
+
+    const imageLoader = (resolverProps: ImageLoaderProps) => {
+        return `https://kidsloop.net/${resolverProps.src}`;
+    };
 
     return (
         <div>
@@ -17,8 +22,9 @@ export default function DrawerContent () {
                 <Link href="/">
                     <a>
                         <Image
-                            src="https://kidsloop.net/wp-content/uploads/2021/08/kidsloop.svg"
-                            alt="Vercel Logo"
+                            loader={imageLoader}
+                            src="wp-content/uploads/2021/08/kidsloop.svg"
+                            alt="kidsloop logo"
                             width={150}
                             height={50}
 

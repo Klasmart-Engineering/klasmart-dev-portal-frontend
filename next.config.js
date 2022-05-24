@@ -2,8 +2,8 @@
 const nextConfig = {
     reactStrictMode: true,
     images: {
-        domains: ["kidsloop.net"],
-    },
+        loader: "custom" 
+    }
 };
 
 module.exports = nextConfig;
