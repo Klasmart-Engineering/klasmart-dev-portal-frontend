@@ -16,6 +16,7 @@ jobs:
     build:
       needs: [install]
       runs-on: ubuntu-latest
+      using: "composite"
       steps:
         - uses: actions/checkout@v3
         - name: Gh pages deploy
